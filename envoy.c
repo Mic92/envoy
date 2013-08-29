@@ -76,6 +76,7 @@ static ssize_t read_password(char **password)
 
     (*password)[--nbytes_r] = 0;
     tcsetattr(fileno(stdin), TCSAFLUSH, &old_termios);
+    printf("PASSWORD: %s\n", *password);
 
     putchar('\n');
     return nbytes_r;
